@@ -1,8 +1,7 @@
 # Arbol-IA
 Tarea IA, árbol y búsqueda
 
-Utilizamos la librería bigtree de python, con el propósito de utilizar métodos hechos específicamente para crear y manipular árboles. Creamos un árbol predefinido al empezar, marcando la jerarquía de este. Después, utilizamos un menú para poder elegir lo que se quiere hacer, entre las opciones están 'Mostrar árbol', el cual te muestra en consola el árbol con el metodo show de bigtree, 'Buscar un valor', que utiliza el método find para encontrar el valor que ingreses, y por último 'Salir' para terminar el programa.
-
+En este programa creamos una clase Nodo, la cual tiene los atributos left (nodo a la izquierda), right (nodo a la derecha) y data (valor del nodo). Implementamos varios métodos, el de insert para poder insertarle nuevos nodos al árbol, recInorden para hacer el recorrido inorden, recPreorden y recPostorden para los recorridos preorden y postorden respectivamente. Además, hay un método busquedaArbol para verificar si un valor se encuentra dentro del árbol. Por último, hicimos un menú para poder seleccionar la acción que se desee. Dentro del código hay varios comentarios para una explicación del programa a más profundidad.
 Integrantes:
 Sarabia Guzmán Jesús Aldahir, 
 Zamudio Lizárraga Bryan Martín
