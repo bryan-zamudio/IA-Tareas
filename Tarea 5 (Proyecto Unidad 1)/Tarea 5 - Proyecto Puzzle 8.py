@@ -42,9 +42,9 @@ def ver_Vecinos(tab):
 
 # Algoritmo A*
 def a_Estrella(tab, meta, opcion):
-    if (opcion == '1'):
+    if (opcion == 1):
         opcion_Dist = dist_Manhattan
-    elif(opcion == '2'):
+    elif(opcion == 2):
         opcion_Dist = dist_Cuadros
 
     # Lista de tuplas para guardar: (costo total, costo para llegar al estado actual, estado actual, camino seguido)
@@ -95,7 +95,9 @@ tab_resuelto =  (1, 2, 3,\
                 7, 8, 0)
 
 # Ejecutar el algoritmo A*
-opcion = input('Ingresa la heurística a escoger: \n1. Distancia Manhattan \n2. Distancia Cuadros\n')
+opcion = 0
+while opcion < 1 or opcion > 2:    
+    opcion = int(input('Ingresa la heurística a escoger: \n1. Distancia Manhattan \n2. Distancia Cuadros\n'))
 solucion = a_Estrella(tab_inicial, tab_resuelto, opcion)
 
 if (solucion == False):
