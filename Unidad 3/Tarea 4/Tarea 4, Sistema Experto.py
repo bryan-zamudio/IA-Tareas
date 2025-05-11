@@ -12,11 +12,11 @@ def sistemaExperto():
 
     # Entradas del usuario
     objetivo = pedirOpcion("¿Cuál es tu objetivo? (bajar de peso / mantener peso / ganar masa muscular): ",
-                        ["bajar de peso", "mantener peso", "ganar masa muscular"])
+                        ["bajar de peso", "mantener peso", "ganar masa muscular", "bajar", "mantener", "ganar"])
     actividad = pedirOpcion("¿Cuál es tu nivel de actividad? (sedentario / moderada / activo): ", 
                         ["sedentario", "moderada", "activo"])
     preferencia = pedirOpcion("¿Eres vegano, vegetariano u omnívoro?: ", 
-                        ["vegano", "vegetariano", "omnívoro"])
+                        ["vegano", "vegetariano", "omnívoro", "omnivoro"])
     lactosa = pedirOpcion("¿Tienes alergia a la lactosa? (sí / no): ", 
                         ["sí", "si", "no"])
     gluten = pedirOpcion("¿Tienes intolerancia al gluten? (sí / no): ",
@@ -24,19 +24,19 @@ def sistemaExperto():
     frutos_secos = pedirOpcion("¿Tienes alergia a los frutos secos? (sí / no): ", 
                         ["sí", "si", "no"])
     tiempo = pedirOpcion("¿Tienes poco tiempo o mucho tiempo para cocinar?: ", 
-                        ["poco tiempo", "mucho tiempo"])
+                        ["poco tiempo", "mucho tiempo", "mucho", "poco"])
 
     # En este caso tomamos en cuenta tres condiciones, ya que hay que tomar en cyenta tanto el objetivo como el nivel de actividad y
     # la preferencia para poder hacer una recomendación más precisa
 
     # Reglas basadas en objetivos y nivel de actividad
-    if objetivo == "bajar de peso":
+    if objetivo in ["bajar", "bajar de peso"]:
         if actividad == "activo":
             if preferencia == "vegano":
                 recomendacion += "- Dieta hipocalórica vegetal: tofu, legumbres, vegetales frescos y cereales integrales.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Dieta con vegetales frescos, huevo, lácteos bajos en grasa y avena.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Dieta hipocalórica rica en vegetales frescos, proteínas magras como pollo o tofu,\n"
                 recomendacion += "  y carbohidratos complejos como avena y arroz integral.\n"
         elif actividad == "sedentario":
@@ -44,7 +44,7 @@ def sistemaExperto():
                 recomendacion += "- Dieta muy baja en calorías, evitando procesados y azúcares, basada en vegetales, tofu y legumbres.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Dieta baja en calorías con verduras, frutas con baja carga glucémica y lácteos ligeros.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Dieta muy baja en calorías, evitando azúcares, procesados y grasas saturadas.\n"
                 recomendacion += "  El control de porciones o el ayuno intermitente pueden ayudarte.\n"
         elif actividad == "moderada":
@@ -52,40 +52,40 @@ def sistemaExperto():
                 recomendacion += "- Dieta con legumbres, vegetales ricos en fibra y tofu. Ideal para perder peso sin perder energía.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Vegetales, frutas, legumbres y proteínas como huevo o lácteos bajos en grasa.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Dieta rica en legumbres, vegetales con fibra y proteínas magras,\n"
                 recomendacion += "  ideal para perder peso sin afectar tu energía diaria.\n"
 
-    elif objetivo == "mantener peso":
+    elif objetivo in ["mantener", "mantener peso"]:
         if actividad == "sedentario":
             if preferencia == "vegano":
                 recomendacion += "- Dieta equilibrada vegetal con porciones justas: cereales integrales, legumbres y verduras.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Dieta con frutas, verduras, cereales integrales y derivados lácteos moderados.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Dieta equilibrada con porciones justas, enfocada en alimentos naturales y no procesados.\n"
         elif actividad == "moderada":
             if preferencia == "vegano":
                 recomendacion += "- Dieta balanceada vegana: frutas, verduras, quinoa, arroz integral y fuentes de B12.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Dieta con vegetales, frutas, cereales integrales, huevo y yogures ligeros.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Dieta balanceada que incluya frutas, verduras y cereales integrales.\n"
         elif actividad == "activo":
             if preferencia == "vegano":
                 recomendacion += "- Dieta vegetal con alto contenido calórico saludable: frutos secos, legumbres, aceite de oliva.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Dieta con lácteos, huevo, aguacate y cereales completos para mantener energía.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Dieta con carnes magras, grasas saludables como aguacate y carbohidratos complejos.\n"
 
-    elif objetivo == "ganar masa muscular":
+    elif objetivo in ["ganar masa muscular", "ganar"]:
         if actividad == "activo":
             if preferencia == "vegano":
                 recomendacion += "- Dieta hipercalórica con legumbres, cereales, tofu, frutos secos y batidos vegetales.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Dieta con huevos, lácteos, cereales integrales y legumbres. Come cada 3 horas.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Dieta hipercalórica con muchas proteínas (animales o vegetales), carbohidratos complejos\n"
                 recomendacion += "  como papa o quinoa y grasas buenas como nueces o aceite de oliva. Come cada 3 horas.\n"
         elif actividad == "moderada":
@@ -93,7 +93,7 @@ def sistemaExperto():
                 recomendacion += "- Dieta rica en calorías vegetales: arroz, lentejas, tofu, semillas y mantequillas naturales.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Proteínas como huevo y lácteos, cereales integrales, mantequillas de nuez.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Proteínas de calidad (huevo, legumbres), arroz integral, mantequillas naturales.\n"
                 recomendacion += "  Aumenta progresivamente tus porciones.\n"
         elif actividad == "sedentario":
@@ -101,7 +101,7 @@ def sistemaExperto():
                 recomendacion += "- Superávit calórico leve con alimentos vegetales densos en nutrientes: frutos secos, cereales, tofu.\n"
             elif preferencia == "vegetariano":
                 recomendacion += "- Aumenta calorías con huevo, lácteos, cereales integrales y frutas calóricas.\n"
-            elif preferencia == "omnívoro":
+            elif preferencia in ["omnívoro", "omnivoro"]:
                 recomendacion += "- Con poco movimiento, puedes comenzar con superávit calórico leve\n"
                 recomendacion += "  y proteínas de buena calidad. Añade ejercicio progresivamente.\n"
 
@@ -117,10 +117,10 @@ def sistemaExperto():
         recomendacion += "- Evita nueces, almendras y maní. Usa aguacate, semillas o aceite de oliva como alternativas.\n"
 
     # Reglas por tiempo disponible
-    if tiempo == "poco tiempo":
+    if tiempo in ["poco tiempo", "poco"]:
         recomendacion += "- Prepara platos simples: ensaladas con proteína, batidos, wraps o snacks saludables.\n"
         recomendacion += "  Considera cocinar en lotes (meal prep) para toda la semana.\n"
-    elif tiempo == "mucho tiempo":
+    elif tiempo in ["mucho", "mucho tiempo"]:
         recomendacion += "- Puedes cocinar desde cero: sopas, guisos, panes integrales y postres bajos en azúcar.\n"
 
     # Resultado final
